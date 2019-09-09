@@ -1,4 +1,17 @@
+# 分布式基础知识
+
 ## 分布式锁
 
 * [架构师带你玩转分布式锁 ](https://mp.weixin.qq.com/s?__biz=MzI4NDY5Mjc1Mg==&mid=2247486313&idx=1&sn=9b097bf3ce2d13e0afc3ed1e6b0df674&chksm=ebf6d316dc815a006232abdfe700cdedeb417ec9ffe9e1ea67b255f9bb8c58236af1f314c5f8&scene=27#wechat_redirect)
 * [别吵吵，分布式锁也是锁](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665515354&idx=1&sn=769cb0b8f0bd54c8b721931880d3e077&chksm=80d67119b7a1f80f3504cb7f9c6808b2113f681572cd59a0ce0b93f464bbec009fd5dae85fa6&scene=27#wechat_redirect)
+
+分布式锁三种实现方式：
+
+* 基于数据库实现
+    * 乐观锁 （CAS）
+    * 悲观锁 （for update）
+* 基于 Redis 实现
+    * setnx()
+    * redis集群模式的分布式锁，可以采用redis的Redlock机制
+* 基于 ZooKeeper 实现
+    * 使用 ZooKeeper 的**临时有序节点**来实现的分布式锁。原理就是：当某客户端要进行逻辑的加锁时，就在zookeeper上的某个指定节点的目录下，去生成一个唯一的临时有序节点， 然后判断自己是否是这些有序节点中序号最小的一个，如果是，则算是获取了锁。如果不是，则说明没有获取到锁，那么就需要在序列中找到比自己小的那个节点，并对其调用exist()方法，对其注册事件监听，当监听到这个节点被删除了，那就再去判断一次自己当初创建的节点是否变成了序列中最小的。如果是，则获取锁，如果不是，则重复上述步骤。当释放锁的时候，只需将这个临时节点删除即可。
