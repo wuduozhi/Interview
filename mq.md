@@ -29,3 +29,13 @@
 3. Kafka
 
 性能很 ok，高延迟，适合离线业务，与周边生态系统兼容性好
+
+## 基础概念
+
+1. 队列
+
+2. 主题
+
+3. 分区
+
+![模型](https://static001.geekbang.org/resource/image/46/17/465142ab5b5096f283118c307e8cc117.jpg)
