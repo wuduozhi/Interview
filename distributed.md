@@ -36,3 +36,5 @@
 ![RocketMQ 的事物反查机制](https://static001.geekbang.org/resource/image/11/7a/11ea249b164b893fb9c36e86ae32577a.jpg)
 
 上述三种实现方法，都有各自的优缺点，适用于不同的场景。
+
+[干货 | 一篇文章带你学习分布式事务](https://mp.weixin.qq.com/s/RDnf637MY0IVgv2NpNVByw)
