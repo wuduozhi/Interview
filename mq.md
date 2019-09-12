@@ -39,3 +39,15 @@
 3. 分区
 
 ![模型](https://static001.geekbang.org/resource/image/46/17/465142ab5b5096f283118c307e8cc117.jpg)
+
+
+## 如何保证不丢消息
+
+* 如何检测消息丢失？
+
+
+* 如何确保消息可靠传递？
+
+![消息收发过程](https://static001.geekbang.org/resource/image/81/05/81a01f5218614efea2838b0808709205.jpg)
+
+
