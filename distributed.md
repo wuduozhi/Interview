@@ -23,9 +23,11 @@
 
 1. 两阶段提交（2PC Two-phase Commit)
 
-2. TCC (Try-Commit-Cancel)
+2. 3PC
 
-3. 事务消息
+3. TCC (Try-Commit-Cancel)
+
+4. 事务消息
 
 事务消息适用的场景主要是那些需要异步更新数据，并且对数据实时性要求不高的场景。
 
